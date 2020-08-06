@@ -1,0 +1,17 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/png" href="{{ site.icon }}">
+    <title>{{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}">
+    <meta name="title" content="{{ site.title }}">
+    <meta name="author" content="{{ site.author }}">
+    <meta name="keywords" content="{{ site.author }}">
+    {% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
+</head>

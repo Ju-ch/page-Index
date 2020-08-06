@@ -1,0 +1,6 @@
+title: Juch's导航
+author: Juchiahau
+url: https://vmert.com
+icon: ./assets/favicon.ico
+
+exclude: ['node_modules', 'dev', 'img', 'package.json', 'gulpfile.js', '.gitignore', 'README.md', 'Gemfile', 'Gemfile.lock', 'package-lock.json']

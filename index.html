@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<div id="particles-js">
+    <div class="header">
+        <h1 class="h1_info">
+            <script type="text/javascript" src="//vmert.com/hitokoto/?format=js&charset=utf-8"></script>
+            <div id="hitokoto"><script>hitokoto()</script></div>
+        </h1>
+        <div class="header-icons">
+            <a aria-label="Send email" href="mailto:support@vmert.com"><i class="icon fa fa-envelope"></i></a>
+            <a aria-label="My QQ" target="_blank" href="//wpa.qq.com/msgrd?v=3&uin=190926428&site=qq&menu=yes"><i class="icon fa fa-qq" aria-hidden="true"></i></a>
+            <a aria-label="My LinkedIn" target="_blank" href="//www.linkedin.com"><i class="icon fa fa-linkedin-square" aria-hidden="true"></i></a>
+            <a aria-label="My Github" target="_blank" href="//github.com/ju-ch"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
+            <a aria-label="My TG" target="_blank" href="//t.me/Juchiahau"><i class="icon fa fa-paper-plane" aria-hidden="true"></i></a>
+        </div>
+        <div class="clock">
+            {% assign data = "DAYS, HOURS, MINUTES, SECONDS" | split: ", " %}
+            {% for d in data %}
+            <div class="column">
+                <div class="timer" id="{{ d }}"></div>
+                <div class="text">{{ d }}</div>
+            </div>
+            {% if d != 'SECONDS' %}
+            <div class="timer">:</div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
+</div>
+
+{% assign fileName = "msi, fmi" | split: ", " %}
+{% for fn in fileName %}
+{% assign about = site.data.about[fn] %}
+<section id="about">
+    <div class="info-details">
+        <h1>{{ about.name }}</h1>
+        <p>{{ about.Describe }}</p>
+    </div>
+    <div class="info">
+        {% for i in about.info %}
+        <div class="tech">
+            <h2>{{ i.title }}</h2>
+            {% for item in i.icon %}
+            <a href="{{ item.url }}" title="{{ item.name }}">
+                {{ item.svg }}
+            </a>
+            {% endfor %}
+            <p>{{ i.Describe }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% if about.name != "Find Me" %}
+<HR style="margin-top: 2.5em;" width="80%" color=#222831 SIZE=3>
+{% endif %}
+{% endfor %}
