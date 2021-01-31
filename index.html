@@ -44,7 +44,7 @@ layout: default
         <div class="tech">
             <h2>{{ i.title }}</h2>
             {% for item in i.icon %}
-            <a href="{{ item.url }}" title="{{ item.name }}">
+            <a target="_blank" href="{{ item.url }}" title="{{ item.name }}">
                 {{ item.svg }}
             </a>
             {% endfor %}
@@ -53,7 +53,7 @@ layout: default
         {% endfor %}
     </div>
 </section>
-{% if about.name != "Find Me" %}
+{% if about.name != "Ask Me" %}
 <HR style="margin-top: 2.5em;" width="80%" color=#222831 SIZE=3>
 {% endif %}
 {% endfor %}
