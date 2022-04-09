@@ -94,6 +94,10 @@ $(function(){
         document.getElementById("HOURS").innerHTML = h;
         document.getElementById("MINUTES").innerHTML = m;
         document.getElementById("SECONDS").innerHTML = s;
+        //在网页底部插入建站时间 
+        let fullYear = new Date().getFullYear()
+        let footer = '<p>© 2020-'+fullYear+' <a href="#">Juchiahau</a></p>'
+        document.getElementById("fullYear").innerHTML = footer;
         //递归每秒调用countTime方法，显示动态时间效果
         setTimeout(countTime,1000);
     }

@@ -9,7 +9,7 @@ var plumber = require('gulp-plumber');
 /*
 * Compile and minify sass
 */
-gulp.task('sass', function() {
+gulp.task('sass', async() => {
   	gulp.src('dev/styles/**/*.scss')
 		.pipe(plumber())
 		.pipe(sass())
@@ -20,7 +20,7 @@ gulp.task('sass', function() {
 /**
  * Compile and minify js
  */
-gulp.task('js', function(){
+gulp.task('js', async() => {
 	return gulp.src('dev/js/**/*.js')
 		.pipe(plumber())
 		.pipe(concat('main.js'))
@@ -28,4 +28,4 @@ gulp.task('js', function(){
 		.pipe(gulp.dest('assets/js/'))
 });
 
-gulp.task('default', ['js', 'sass']);
+gulp.task('default', gulp.series(['js', 'sass']));
